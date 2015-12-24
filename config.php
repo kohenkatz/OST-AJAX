@@ -17,6 +17,12 @@ class AjaxConfig extends PluginConfig {
 					'desc' => ''
 				]
 			]),
+			'ajax_submission_form_prefix' => new TextboxField([
+				'id' => 'ajax_submission_form_prefix',
+				'label' => 'Prefix for form field names',
+				'default' => 'ost_ajax_form_',
+				'configuration' => []
+			]),
 			'ajax_submission_captcha' => new ChoiceField([
 				'id' => 'ajax_submission_captcha',
 				'label' => 'Use Captcha',
@@ -29,6 +35,7 @@ class AjaxConfig extends PluginConfig {
 				'configuration' => [
 					'desc' => 'If using reCaptcha, provide the Secret Key here',
 					'size' => 40,
+					'length' => 40,
 				]
 			]),
 			'ajax_recaptcha_site' => new TextboxField([
@@ -37,6 +44,7 @@ class AjaxConfig extends PluginConfig {
 				'configuration' => [
 					'desc' => 'If using reCaptcha, provide the Site Key here',
 					'size' => 40,
+					'length' => 40,
 				]
 			]),
 			'ajax_cors_header' => new TextboxField([
