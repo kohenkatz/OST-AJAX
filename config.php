@@ -4,6 +4,10 @@ require_once(INCLUDE_DIR.'/class.plugin.php');
 require_once(INCLUDE_DIR.'/class.forms.php');
 
 class AjaxConfig extends PluginConfig {
+	public function __construct() {
+		parent::__construct('ajax-submit');
+	}
+
 	function getOptions() {
 		return [
 			'ajax_submission_enable' => new BooleanField([
