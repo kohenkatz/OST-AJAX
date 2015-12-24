@@ -86,6 +86,21 @@ fetch(url)
 			}
 		};
 
+		if (data.captcha) {
+			if (data.captcha.type === 'reCaptcha') {
+				var cap = document.createElement('div');
+				cap.classList.add('g-recaptcha');
+				cap.setAttribute('data-sitekey', data.captcha.public_key);
+				cap.setAttribute('data-stoken', data.captcha.secure_token);
+				form.appendChild(cap);
+				var cap_script = document.createElement('script');
+				cap_script.src = 'https://www.google.com/recaptcha/api.js';
+				cap_script.defer = true;
+				cap_script.async = true;
+				form.appendChild(cap_script);
+			}
+		}
+
 		var container = document.getElementById('formcontainer');
 		container.innerHTML = '';
 		container.appendChild(form);
